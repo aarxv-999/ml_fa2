@@ -18,7 +18,7 @@ if uploaded_file:
     st.image(img, caption="Uploaded Image", use_column_width=True)
 
     with st.spinner("Detecting PPE items..."):
-        results = model.predict(source=np.array(img), conf=0.25, device="cpu")
+        results = model.predict(source=np.array(img), conf=0.05, device="cpu")
 
     res = results[0]
     img_with_boxes = res.plot()
